@@ -1,0 +1,445 @@
+@import url('https://fonts.googleapis.com/css2?family=Italiana&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-family: "Poppins";
+    background-color: #111416;
+}
+
+.headerContainer header {
+     display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    width: 100%;
+    left: 0;
+    padding: 20px;
+    /* background-color: #2E3B32; */
+    color: #EFE3D6;
+    z-index: 999;
+}
+
+.logo h1 {
+    width: 70px;
+    position: absolute;
+    /* padding: 20px; */
+    top: 32px;
+    margin-left: 20px;
+    /* filter: invert(1); */
+    font-family: "Italiana";
+}
+
+.profile {
+    width: 70px;
+    position: absolute;
+    /* padding: 20px; */
+    top: 25px;
+    right: 30px;
+     display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    width: 50px;
+    height: 50px;
+    font-size: 1.2em;
+    border-radius: 50%;
+    background-color: #4a5d67;
+}
+.headerContainer header ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #2F3E46; 
+    color: #EFE3D6;
+    width: 100%;
+    padding: 20px;
+    gap: 20px;
+    border-radius: 1.111em;
+    height: 65px;
+}
+
+.headerContainer header ul li {
+    list-style: none;
+    font-weight: 500;
+
+}
+
+.headerContainer header ul li::before {
+    background-color: red;
+    width: 20px;
+    height: 20px;
+    z-index: 999;
+    font-size: 3em;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    margin-top: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.principalContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.textContainer {
+     display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: #EFE3D6;
+    gap: 20px;
+    width: 800px;
+}
+
+.welcome {
+    background-color: #2F3E46;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.textContainer p {
+    width: 600px;
+    text-align: justify;
+     margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.textContainer h1 {
+    font-family: "Italiana";
+    font-size: 5em;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
+ .textContainer h2 {
+    font-family: "Italiana";
+    font-size: 3em;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
+
+.logoContainer img {
+    filter: invert(1);
+    width: 800px;
+}
+
+.btnContainer {
+    outline: none;
+    border: 2px solid #7d9cad;
+    background-color: #4a5d67;
+    padding: 20px;
+    border-radius: 20px;
+    color: #EFE3D6;
+    font-family: "Italiana";
+    font-size: 2em;
+     transition: 1s ease-in-out;
+}
+
+.btnContainer:hover {
+    background-color: #7d9cad;
+    transform: perspective(300px) rotateX(20deg);
+    transition: 1s ease-in-out;
+}
+
+.blur {
+    width: 500px;
+    height: 500px;
+    background-image: linear-gradient(330deg, #7d9cad 0%, transparent 80%);
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    left: 70%;
+    top: 50%;
+    border-radius: 50%;
+    filter: blur(200px);
+}
+
+.profileContainer {
+    display: none;
+    position: fixed;
+    right: 20px;
+    top: 100px;
+    background-color: #2F3E46;
+    padding: 10px;
+    border-radius: 10px;
+    z-index: 999;
+}
+
+.profileContainer ul li {
+    list-style: none;
+    background-color: #4a5d67;
+    margin-top: 10px;
+    padding: 8px;
+    border-radius: 10px;
+    color: #EFE3D6;
+}
+
+.listsContainer {
+    display: none;
+    position: fixed;
+    right: 100px;
+    top: 100px;
+    background-color: #2F3E46;
+    padding: 10px;
+    border-radius: 10px;
+    z-index: 999;
+}
+
+.listsContainer ul li {
+    list-style: none;
+    background-color: #4a5d67;
+    margin-top: 10px;
+    padding: 8px;
+    border-radius: 10px;
+    color: #EFE3D6;
+}
+
+.active {
+    display: flex;
+}
+
+.iconLists {
+      width: 70px;
+    position: absolute;
+    /* padding: 20px; */
+    top: 25px;
+    right: 80px;
+     display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    width: 50px;
+    height: 50px;
+    font-size: 1.8em;
+}
+
+.container h1 {
+    color: #EFE3D6;
+}
+
+.gridContainer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.gridContainer .box {
+    width: 400px;
+    height: 550px;
+    background-color: #1d2123;
+     display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.gridContainer .box img {
+    position: relative;
+    width: 320px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #272a2c;
+}
+
+.price span {
+    font-size: 40px;
+}
+
+.box .btnContainer {
+    width: 90%;
+    padding: 5px;
+    color: #EFE3D6;
+}
+
+.all {
+    width: 100%;
+}
+
+footer {
+    width: 100%;
+    margin-top: 50px;
+    background-color: #2F3E46;
+    color: #EFE3D6;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+@media (max-width: 800px) {
+    .headerContainer header ul li {
+        display: none;
+    }
+    .iconLists {
+        display: flex;
+    }
+}
+
+@media (min-width: 800px) {
+    .iconLists {
+        display: none;
+    }
+    
+}
+
+@media (max-width: 1440px) {
+   .textContainer {
+    margin-left: 150px;
+    width: 500px;
+   }
+    
+}
+
+@media (max-width: 1250px) {
+   .principalContainer {
+    display: block;
+   }
+    
+}
+
+a {
+     text-decoration: none;
+      color: #EFE3D6;
+}
+
+header ul li a {
+    text-decoration: none;
+    /* background-color: #000; */
+    color: #EFE3D6;
+    padding: 8px 16px;
+    border-radius: 5px;
+    transition: transform 0.1s ease, background-color 0.3s ease;
+    display: inline-block;
+}
+
+header ul li a:hover {
+    transform: scale(0.95);
+    background-color: #222;
+      box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.4);
+    transform: translateY(1px);
+}
+
+.verticalContactLayout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.verticalContactLayout .logoContainer img {
+  width: 300px;
+  margin-bottom: 20px;
+}
+
+.verticalContactLayout .textContainer {
+  max-width: 600px;
+}
+
+.verticalContactLayout .textContainer h1 {
+  margin-bottom: 10px;
+}
+
+.verticalContactLayout .textContainer p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+.contactForm {
+  margin-top: 40px;
+  text-align: left;
+  width: 100%;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contactForm h2 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.contactForm label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.contactForm input,
+.contactForm textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.contactForm button {
+  width: 100%;
+  background-color: black;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contactForm button:hover {
+  background-color: #333;
+}
+
+
+.loginForm {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.loginForm form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+    background-color: #4a5d67;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.loginForm form input {
+    outline: none;
+    border: 2px solid #7d9cad;
+    background-color: #ccc;
+    color: #2b2b2b;
+    padding: 15px;
+    font-size: 1.5em;
+    border-radius: 10px;
+}
