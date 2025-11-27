@@ -1,4 +1,10 @@
+<?php
+require_once "conexao/connect.php";
+ $sql = "SELECT * FROM livros";
+    $resultado = mysqli_query($conexao, $sql);
+    
 
+?>
 
 <!DOCTYPE html>
 <html lang="en">
