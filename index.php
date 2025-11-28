@@ -1,52 +1,19 @@
+<?php include("conexao/connect.php"); 
+$sql = "SELECT * FROM produtos LIMIT 3";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+       <link rel="stylesheet" href="style.css?v=1.2">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <title>Based Site</title>
 </head>
 <body>
     <div class="all">
-        <div class="headerContainer">
-            <header>
-                <div class="logo">
-                  <h1>BASED</h1>
-                </div>
-                
-                <ul>
-                <li><a href="index.html">Início</a></li>
-                <li><a href="/pages/sobre.html">Sobre</a></li>
-                 <li><a href="/pages/produtos.html">Produtos</a></li>
-                 <li><a href="/pages/contato.html">Fale conosco</a></li>
-
-                </ul>
-
-                <div class="iconLists">
-                    <i class="fa-solid fa-bars"></i>
-                </div>
-                <div class="profile">
-                    <i class="fa-regular fa-user"></i>
-                </div>
-               
-            </header> 
-            <div class="blur"></div>
-            <div class="listsContainer">
-                 <ul>
-                    <li>Início</li>
-                    <li>Sobre</li>
-                    <li>Produtos</li>
-                    <li>Contato</li>
-                </ul>
-            </div>
-            <div class="profileContainer">
-                    <ul>
-                        <li>Registre-se</li>
-                        <li><a href="pages/login.html">Login</a></li>
-                    </ul>
-                </div>
-        </div>
+          <?php include("principais/header.php"); ?>
         <div class="container">
             <div class="principalContainer">
                 <div class="textContainer">
@@ -85,26 +52,30 @@
             <div class="textContainer">
                 <h1>Produtos em destaque</h1> 
                 <div class="gridContainer">
-                    
+                      <?php
+                    $resultado = mysqli_query($conexao, $sql);
+
+                    if (mysqli_num_rows($resultado) > 0) {
+
+                        while ($livros = mysqli_fetch_array($resultado)) {
+                            ?>
                 <div class="box">
-                    <img src="images/camisa_manga_longa_azul.jpg" style="width: 250px;">
-                    <!-- <h2 class="productTitle">Camisa</h2> -->
-                    <h1 class="price"><span>R$</span> 139, <span>99</span></h1>
-                    <button class="btnContainer">Comprar</button>
-                </div>
-                 <div class="box">
-                    <img src="images/moletom_based_preto.jpg" style="width: 250px;">
-                    <!-- <h2 class="productTitle">Camisa</h2> -->
-                    <h1 class="price"><span>R$</span> 159, <span>99</span></h1>
-                    <button class="btnContainer">Comprar</button>
-                </div>
-                  <div class="box">
-                    <img src="images/tenis_based_preto.jpg" style="width: 250px;">
-                    <!-- <h2 class="productTitle">Camisa</h2> -->
-                    <h1 class="price"><span>R$</span> 250, <span>00</span></h1>
-                    <button class="btnContainer">Comprar</button>
-                </div>
-                    
+                                <img src="<?= $livros['image'] ?>" alt="Jaqueta Based" style="width: 250px;">
+                                  <br>
+                                <h3><?= $livros['title'] ?></h3>
+                                <br>
+                                <span><?= $livros['desc'] ?></span>
+                                <h1 class="price"><span>R$</span> <?= $livros['price'] ?> </h1>
+                                <button class="btnContainer">Comprar</button>
+                            </div>
+                   <?php
+                        }
+                    }
+                    ?>
+                    <br>
+                    <br>    
+                    <a href="produtos.php"><button class="btnContainer" style="display: flex; justify-content: center;align-items: center; margin-left: 130px;position: absolute; bottom: -30px; "> 
+                        Ver mais</button></a>
             </div>
             </div>
            
