@@ -74,9 +74,8 @@ $sql = "SELECT * FROM produtos LIMIT 3";
                     ?>
                     <br>
                     <br>    
-                    <button class="btnContainer" style="display: flex; justify-content: center;align-items: center; margin-left: 550px;position: absolute; bottom: -30px;>
-                      <!-- <i class="fa-solid fa-web-awesome"></i> 
-                        Ver mais</button>
+                    <a href="produtos.php"><button class="btnContainer" style="display: flex; justify-content: center;align-items: center; margin-left: 130px;position: absolute; bottom: -30px; "> 
+                        Ver mais</button></a>
             </div>
             </div>
            
