@@ -8,7 +8,7 @@ $sql = "SELECT * FROM produtos";
 <html lang="en">
 
 <head>
-<link rel="stylesheet" href="style.css?v=1.2">
+    <link rel="stylesheet" href="style.css?v=1.2">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
@@ -31,7 +31,9 @@ $sql = "SELECT * FROM produtos";
                             ?>
                             <div class="box">
                                 <img src="<?= $livros['image'] ?>" alt="Jaqueta Based" style="width: 250px;">
-                                <figcaption><?= $livros['title'] ?></figcaption>
+                                  <br>
+                                <h3><?= $livros['title'] ?></h3>
+                                <br>
                                 <span><?= $livros['desc'] ?></span>
                                 <h1 class="price"><span>R$</span> <?= $livros['price'] ?> </h1>
                                 <button class="btnContainer">Comprar</button>

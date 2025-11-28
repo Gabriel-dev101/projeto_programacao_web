@@ -251,9 +251,12 @@ body {
     height: auto;
     background-color: #1d2123;
      display: flex;
+     padding: 10px;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    border-radius: 10px;
+    text-align: center;
 }
 .gridContainer .box img {
     position: relative;
