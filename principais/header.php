@@ -1,4 +1,4 @@
-  <?php include("conexao/connect.php"); ?>
+
   <div class="headerContainer">
             <header>
                 <div class="logo">
@@ -6,10 +6,10 @@
                 </div>
                 
                 <ul>
-              <li><a href="../index.html">Início</a></li>
-                <li><a href="sobre.html">Sobre</a></li>
-                 <li><a href="produtos.html">Produtos</a></li>
-                 <li><a href="contato.html">Fale conosco</a></li>
+              <li><a href="index.php">Início</a></li>
+                <li><a href="sobre.php">Sobre</a></li>
+                 <li><a href="produtos.php">Produtos</a></li>
+                 <li><a href="contato.php">Fale conosco</a></li>
 
 
                 </ul>

@@ -248,7 +248,7 @@ body {
 
 .gridContainer .box {
     width: 400px;
-    height: 550px;
+    height: auto;
     background-color: #1d2123;
      display: flex;
     align-items: center;
