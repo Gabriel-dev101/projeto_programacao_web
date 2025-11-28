@@ -1,9 +1,13 @@
+<?php include("conexao/connect.php"); 
+$sql = "SELECT * FROM produtos LIMIT 3";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+       <link rel="stylesheet" href="style.css?v=1.2">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <title>Based Site</title>
 </head>
@@ -48,26 +52,31 @@
             <div class="textContainer">
                 <h1>Produtos em destaque</h1> 
                 <div class="gridContainer">
-                    
+                      <?php
+                    $resultado = mysqli_query($conexao, $sql);
+
+                    if (mysqli_num_rows($resultado) > 0) {
+
+                        while ($livros = mysqli_fetch_array($resultado)) {
+                            ?>
                 <div class="box">
-                    <img src="images/camisa_manga_longa_azul.jpg" style="width: 250px;">
-                    <!-- <h2 class="productTitle">Camisa</h2> -->
-                    <h1 class="price"><span>R$</span> 139, <span>99</span></h1>
-                    <button class="btnContainer">Comprar</button>
-                </div>
-                 <div class="box">
-                    <img src="images/moletom_based_preto.jpg" style="width: 250px;">
-                    <!-- <h2 class="productTitle">Camisa</h2> -->
-                    <h1 class="price"><span>R$</span> 159, <span>99</span></h1>
-                    <button class="btnContainer">Comprar</button>
-                </div>
-                  <div class="box">
-                    <img src="images/tenis_based_preto.jpg" style="width: 250px;">
-                    <!-- <h2 class="productTitle">Camisa</h2> -->
-                    <h1 class="price"><span>R$</span> 250, <span>00</span></h1>
-                    <button class="btnContainer">Comprar</button>
-                </div>
-                    
+                                <img src="<?= $livros['image'] ?>" alt="Jaqueta Based" style="width: 250px;">
+                                  <br>
+                                <h3><?= $livros['title'] ?></h3>
+                                <br>
+                                <span><?= $livros['desc'] ?></span>
+                                <h1 class="price"><span>R$</span> <?= $livros['price'] ?> </h1>
+                                <button class="btnContainer">Comprar</button>
+                            </div>
+                   <?php
+                        }
+                    }
+                    ?>
+                    <br>
+                    <br>    
+                    <button class="btnContainer" style="display: flex; justify-content: center;align-items: center; margin-left: 550px;position: absolute; bottom: -30px;>
+                      <!-- <i class="fa-solid fa-web-awesome"></i> 
+                        Ver mais</button>
             </div>
             </div>
            
