@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once "conexao/connect.php";
 $sql = "SELECT * FROM produtos";
 $resultado = mysqli_query($conn, $sql);

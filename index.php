@@ -1,4 +1,6 @@
-<?php include("conexao/connect.php"); 
+<?php
+session_start();
+include("conexao/connect.php"); 
 $sql = "SELECT * FROM produtos LIMIT 3";
 ?>
 

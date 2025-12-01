@@ -1,3 +1,8 @@
+<?php
+ if (session_status() === PHP_SESSION_NONE) {
+     session_start();
+ }
+ ?>
 
   <div class="headerContainer">
             <header>
@@ -31,12 +36,21 @@
                     <li>Contato</li>
                 </ul>
             </div>
+            <?php if (isset($_SESSION['user_nome'])): ?>
             <div class="profileContainer">
                     <ul>
-                        <li>Registre-se</li>
-                        <li>Login</li>
+                        <li><?php echo htmlspecialchars($_SESSION['user_nome']); ?></li>
+                        <li><a href="/projeto_programacao_web/logout.php">Sair</a></li>
                     </ul>
                 </div>
+            <?php else: ?>
+            <div class="profileContainer">
+                    <ul>
+                        <li><a href="/projeto_programacao_web/register.php">Registre-se</a></li>
+                        <li><a href="/projeto_programacao_web/login.php">Login</a></li>
+                    </ul>
+                </div>
+            <?php endif; ?>
         </div>
 
            <script src="../script.js"></script>
