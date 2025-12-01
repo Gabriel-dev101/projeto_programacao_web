@@ -53,7 +53,7 @@ $sql = "SELECT * FROM produtos LIMIT 3";
                 <h1>Produtos em destaque</h1> 
                 <div class="gridContainer">
                       <?php
-                    $resultado = mysqli_query($conexao, $sql);
+                    $resultado = mysqli_query($conn, $sql);
 
                     if (mysqli_num_rows($resultado) > 0) {
 

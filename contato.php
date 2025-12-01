@@ -12,7 +12,7 @@
         <?php include("principais/header.php"); ?>
   <div class="container verticalContactLayout">
     <div class="logoContainer">
-      <img src="../images/ChatGPT Image 27 de mai. de 2025, 16_12_45.png" alt="Logo Based">
+      <img src="images/ChatGPT Image 27 de mai. de 2025, 16_12_45.png" alt="Logo Based">
     </div>
 
     <div class="textContainer">

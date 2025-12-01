@@ -1,9 +1,7 @@
 <?php
-    //1ª etapa - conectando com servidor
-    $conexao = mysqli_connect("localhost", "root", "", "", 3307);
-    //2ª etapa - selecionando banco de dados
-    $db = mysqli_select_db($conexao,"projetoweb");
+$conn = mysqli_connect("localhost", "root", "", "projetoweb", 3306);
 
-    if(!$conexao){  
-        echo "<h2>Erro ao conectar o banco de dados</h2>";
-    }
+if(!$conn){
+    die("Erro na conexão: " . mysqli_connect_error());
+}
+?>

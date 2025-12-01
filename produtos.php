@@ -1,7 +1,7 @@
 <?php
 require_once "conexao/connect.php";
 $sql = "SELECT * FROM produtos";
-
+$resultado = mysqli_query($conn, $sql);
 ?>
 
 <!DOCTYPE html>
@@ -23,7 +23,7 @@ $sql = "SELECT * FROM produtos";
                 <h1>Produtos</h1>
                 <div class="gridContainer">
                     <?php
-                    $resultado = mysqli_query($conexao, $sql);
+                    $resultado = mysqli_query($conn, $sql);
 
                     if (mysqli_num_rows($resultado) > 0) {
 
