@@ -20,7 +20,7 @@ if(!isset($admin_id)){
    <title>Painel Admin</title>
 
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
-   <link rel="stylesheet" href="../css/admin_style.css">
+   <link rel="stylesheet" href="../admin.css">
 </head>
 <body>
 
@@ -76,7 +76,7 @@ if(!isset($admin_id)){
 
 </section>
 
-<script src="../js/admin_script.js"></script>
+<script src="../adminscript.js"></script>
 
 </body>
 </html>
