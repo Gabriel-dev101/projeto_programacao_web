@@ -6,7 +6,7 @@ if (isset($_POST['salvar'])) {
     $desc = $_POST['desc'];
     $price = $_POST['price'];
     $image = $_POST['image']; 
-    $image = $_POST['estoque']; 
+    $estoque = $_POST['estoque']; 
 
     $sql = "INSERT INTO produtos (title, `desc`, price, image, estoque) VALUES ('$title', '$desc', '$price', '$image', '$estoque')";
     
