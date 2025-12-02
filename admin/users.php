@@ -41,10 +41,11 @@ $sql = "SELECT * FROM users";
                                 <span><?= $contatos['Senha'] ?></span>
                                 <br>
                                 <h3>Email</h3>
-                                <span><?= $contatos['email'] ?></span>
+                                <span><?= $contatos['Email'] ?></span>
                                 <br>
                                 <H3>Endereço</H3>
-                                <span><?= $contatos['Endereço'] ?></span>
+                                <span><?= $contatos['Endereco'] ?></span>
+                                <br>
                                 <h3>Gastos</h3>
                                 <span><?= $contatos['gastos'] ?></span>
                                 <!-- <h1 class="price"><span>R$</span> <?= $contatos['price'] ?> </h1> -->

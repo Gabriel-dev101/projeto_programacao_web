@@ -61,8 +61,8 @@ session_start();
             $admins = mysqli_num_rows($resultado);
          ?>
          <h3><?= $admins; ?></h3>
-         <p>Admins</p>
-         <a href="admin_accounts.php" class="btn">Ver Usuários</a>
+         <p>Usuários</p>
+         <a href="users.php" class="btn">Ver Usuários</a>
       </div>
 
    </div>
