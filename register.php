@@ -46,24 +46,26 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css?v=1.2">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <title>Registrar</title>
 </head>
 <body>
     <div class="all">
         <?php include("principais/header.php"); ?>
-        <div class="container">
-            <div class="textContainer">
-                <h1>Registre-se</h1>
+
+        <div class="loginForm">
+            <form method="post" action="register.php" class="formAuth">
+                <h2 style="color: #EFE3D6;">Registre-se</h2>
+
                 <?php if ($mensagem !== "") { ?>
-                    <p><?php echo $mensagem; ?></p>
+                    <p style="color: #EFE3D6;">&raquo; <?php echo $mensagem; ?></p>
                 <?php } ?>
 
                 <?php if ($jaLogadoAviso !== "" && !$cadastro_sucesso) { ?>
-                    <p><?php echo $jaLogadoAviso; ?></p>
+                    <p style="color: #EFE3D6;"><?php echo $jaLogadoAviso; ?></p>
                 <?php } ?>
 
                 <?php if (!$cadastro_sucesso) { ?>
-                <form method="post" action="register.php" class="formAuth" style="display: flex; flex-direction: column; gap: 10px; max-width: 320px;">
                     <label for="nome">Nome</label>
                     <input type="text" id="nome" name="nome" required>
 
@@ -76,10 +78,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                     <label for="senha">Senha</label>
                     <input type="password" id="senha" name="senha" required>
 
-                    <button type="submit" style="width: 100%;">Cadastrar</button>
-                </form>
+                    <button class="btnContainer" type="submit" style="width: 100%;">Cadastrar</button>
                 <?php } ?>
-            </div>
+            </form>
         </div>
     </div>
 </body>

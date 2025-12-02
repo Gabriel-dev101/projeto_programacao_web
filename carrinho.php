@@ -1,5 +1,11 @@
 <?php
 session_start();
+
+if (!isset($_SESSION['user_id'])) {
+    header("Location: login.php?precisa_login=1");
+    exit;
+}
+
 require_once "conexao/connect.php";
 
 if (!isset($_SESSION['cart'])) {
@@ -95,6 +101,19 @@ if ($acao === 'finalizar' && !empty($_SESSION['cart'])) {
                 $updateSql = "UPDATE produtos SET estoque = estoque - $qtd WHERE id = $id";
                 mysqli_query($conn, $updateSql);
             }
+
+            $totalCompra = 0;
+            foreach ($_SESSION['cart'] as $item) {
+                $totalCompra += ((float)$item['preco']) * (int)$item['quantidade'];
+            }
+
+            if (isset($_SESSION['user_id'])) {
+                $userId = (int)$_SESSION['user_id'];
+                $totalCompraValor = (float)$totalCompra;
+                $updateUserSql = "UPDATE users SET gastos = gastos + $totalCompraValor WHERE id = $userId";
+                mysqli_query($conn, $updateUserSql);
+            }
+
             $_SESSION['cart'] = [];
             $mensagem = "Compra finalizada com sucesso!";
         }

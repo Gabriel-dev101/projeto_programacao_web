@@ -83,8 +83,8 @@ $sql = "SELECT * FROM produtos LIMIT 3";
            
         </div>
         <footer>
-            <h4>Trabalho Aplicações para Internet - "BASED"</h4>
-            <p> Francisco Llarena - Arthur Costa - Gabriel Dantas</p>
+            <h4>Trabalho Programaçao Web-"Based"</h4>
+            <p> Francisco Llarena - Arthur Costa - Gabriel Dantas-Matheus Caldas - Tobias Feitoza </p>
 
         </footer>
     </div>
