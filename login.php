@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <title>Login Based</title>
 </head>
 <body>
@@ -19,6 +20,12 @@
                 <input type="password" name="senha" placeholder="Digite Sua Senha..." required>
 
                 <button class="btnContainer" type="submit" style="width: 100%;">Entrar</button>
+
+                <?php if(isset($_GET['precisa_login'])): ?>
+                    <p style="color: #EFE3D6; margin-top: 10px;">
+                        Faça login para acessar o carrinho e finalizar suas compras.
+                    </p>
+                <?php endif; ?>
 
                 <?php if(isset($_GET['erro'])): ?>
                     <p style="color: red; margin-top: 10px;">
