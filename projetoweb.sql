@@ -79,6 +79,7 @@ CREATE TABLE `produtos` (
   `title` varchar(45) NOT NULL,
   `desc` varchar(1000) NOT NULL,
   `image` varchar(500) NOT NULL,
+  `estoque` int(11) NOT NULL DEFAULT 5,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -103,8 +104,10 @@ DROP TABLE IF EXISTS `users`;
 CREATE TABLE `users` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `Nome` varchar(45) NOT NULL,
+  `endereco` varchar(255) NOT NULL,
   `Email` varchar(105) NOT NULL,
   `Senha` varchar(45) NOT NULL,
+  `gastos` decimal(10,2) NOT NULL DEFAULT 0.00,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
