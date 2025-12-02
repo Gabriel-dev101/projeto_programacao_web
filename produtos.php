@@ -37,7 +37,11 @@ $resultado = mysqli_query($conn, $sql);
                                 <br>
                                 <span><?= $livros['desc'] ?></span>
                                 <h1 class="price"><span>R$</span> <?= $livros['price'] ?> </h1>
-                                <button class="btnContainer">Comprar</button>
+                                <form method="post" action="carrinho.php">
+                                    <input type="hidden" name="acao" value="add">
+                                    <input type="hidden" name="produto_id" value="<?= $livros['id'] ?>">
+                                    <button class="btnContainer" type="submit">Comprar</button>
+                                </form>
                             </div>
                             <?php
                         }

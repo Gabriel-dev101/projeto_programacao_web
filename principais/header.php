@@ -2,6 +2,12 @@
  if (session_status() === PHP_SESSION_NONE) {
      session_start();
  }
+ $cartCount = 0;
+ if (isset($_SESSION['cart']) && is_array($_SESSION['cart'])) {
+     foreach ($_SESSION['cart'] as $item) {
+         $cartCount += isset($item['quantidade']) ? (int)$item['quantidade'] : 0;
+     }
+ }
  ?>
 
   <div class="headerContainer">
@@ -22,6 +28,15 @@
                 <div class="iconLists">
                     <i class="fa-solid fa-bars"></i>
                 </div>
+                <a href="/projeto_programacao_web/carrinho.php" class="cartLink">
+                    <div class="cart">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        <?php if ($cartCount > 0): ?>
+                        <span class="cart-badge"><?php echo $cartCount; ?></span>
+                        <?php endif; ?>
+                    </div>
+                </a>
+
                 <div class="profile">
                     <i class="fa-regular fa-user"></i>
                 </div>
