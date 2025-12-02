@@ -32,17 +32,22 @@ $sql = "SELECT * FROM contato";
                             <div class="box">
 
                                 <br>
+                                <h3>Id</h3>
                                 <h3><?= $contatos['id'] ?></h3>
                                 <br>
-                                <span><?= $contatos['id'] ?></span>
-                                <br>
+                                <h3>Nome</h3>
                                 <span><?= $contatos['nome'] ?></span>
                                 <br>
+                                <h3>Email</h3>
                                 <span><?= $contatos['email'] ?></span>
                                 <br>
+                                <h3>Numero</h3>
                                 <span><?= $contatos['numero'] ?></span>
+                                <br>
+                                <h3>Mensagem</h3>
                                 <span><?= $contatos['mensagem'] ?></span>
-                                <!-- <h1 class="price"><span>R$</span> <?= $contatos['price'] ?> </h1> -->
+                              
+                                <br>
 
 
                                 <a style="width: 90%;" href="edit_mensagem.php?id=<?= $contatos['id'] ?>"><button
