@@ -16,32 +16,6 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `clientes`
---
-
-DROP TABLE IF EXISTS `clientes`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `clientes` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `cliente` varchar(45) NOT NULL,
-  `cidade` varchar(45) NOT NULL,
-  `estado` varchar(45) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `clientes`
---
-
-LOCK TABLES `clientes` WRITE;
-/*!40000 ALTER TABLE `clientes` DISABLE KEYS */;
-INSERT INTO `clientes` VALUES (1,'','','');
-/*!40000 ALTER TABLE `clientes` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `contato`
 --
 
@@ -50,11 +24,12 @@ DROP TABLE IF EXISTS `contato`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `contato` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `user` varchar(45) NOT NULL,
   `nome` varchar(45) NOT NULL,
   `email` varchar(45) NOT NULL,
+  `numero` varchar(20) NOT NULL,
+  `mensagem` varchar(1000) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -63,6 +38,7 @@ CREATE TABLE `contato` (
 
 LOCK TABLES `contato` WRITE;
 /*!40000 ALTER TABLE `contato` DISABLE KEYS */;
+INSERT INTO `contato` VALUES (1,'dwa','daw@daw.com','','dwa'),(2,'dwada','fraciscoagapitollarena@gmail.com','3123131231','dwadawda'),(3,'daw','fraciscoagapitollarena@gmail.com','31231312','dawdaddaw');
 /*!40000 ALTER TABLE `contato` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -79,9 +55,9 @@ CREATE TABLE `produtos` (
   `title` varchar(45) NOT NULL,
   `desc` varchar(1000) NOT NULL,
   `image` varchar(500) NOT NULL,
-  `estoque` int(11) NOT NULL DEFAULT 5,
+  `estoque` int(11) DEFAULT 0,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -90,7 +66,7 @@ CREATE TABLE `produtos` (
 
 LOCK TABLES `produtos` WRITE;
 /*!40000 ALTER TABLE `produtos` DISABLE KEYS */;
-INSERT INTO `produtos` VALUES (1,'80,00','Boné Based','Boné simples e estiloso, perfeito para quem gosta de um visual moderno sem exageros. Feito com material de alta qualidade, tem toque macio, aba curvada e formato estruturado que se adapta bem à cabeça. O design minimalista, com poucos detalhes e cores neutras, traz um ar sofisticado e versátil — ideal para usar no dia a dia, em passeios ou compor um look urbano com personalidade.','https://i.ibb.co/27qwB7XH/bone-based-bege.png'),(2,'90,00','Camisa Básica Branca','Camisa básica branca com design minimalista e toque sofisticado. Produzida em algodão de alta qualidade, oferece conforto e caimento perfeito ao corpo. O logo da marca em preto no peito adiciona contraste sutil e identidade ao visual. Ideal para quem busca uma peça versátil, estilosa e fácil de combinar em qualquer ocasião, do casual ao moderno.','https://i.ibb.co/LfD8MZG/camisa-based-frente.png'),(3,'90,00','Camisa Básica Preta','Camisa básica preta com design clean e moderno. Confeccionada em algodão macio de alta qualidade, oferece conforto, durabilidade e ótimo caimento. O logo da marca em branco no peito traz um contraste elegante e discreto, destacando o estilo minimalista da peça. Versátil e atemporal, combina facilmente com diferentes looks, ideal para quem valoriza simplicidade com personalidade.','https://i.ibb.co/VWr2Z2gV/camisa-based-preta.png'),(4,'249,99','Camisa Social','Camisa social azul-escura com design elegante e sofisticado. Confeccionada em tecido leve e de alta qualidade, oferece conforto e caimento impecável. Possui acabamento refinado, botões discretos e corte que valoriza a silhueta. Ideal para ocasiões formais ou para compor um visual moderno e profissional, unindo estilo, sobriedade e classe em uma única peça.','https://i.ibb.co/pBLLyRhx/camisa-manga-longa-azul.png'),(5,'199,99','Jaqueta de Couro','Jaqueta de couro preta com design marcante e contemporâneo. Produzida em couro legítimo de alta qualidade, oferece durabilidade, conforto e um caimento perfeito. Possui zíper metálico, bolsos funcionais e acabamento detalhado que reforça o estilo urbano e sofisticado. Versátil e atemporal, é a peça ideal para quem busca presença e elegância em qualquer ocasião.','https://i.ibb.co/gn9KMJh/jaqueta-based-frente-1.png'),(6,'149,90','Sweater','Sweater preto com design minimalista e elegante. Confeccionado em tecido macio e de alta qualidade, proporciona conforto térmico e excelente caimento. Possui acabamento refinado nas mangas e na barra, destacando um visual moderno e discreto. Ideal para dias frios, combina facilmente com diferentes estilos, trazendo sofisticação e praticidade ao look.','https://i.ibb.co/Vpj4xWWP/moletom-based-preto.png'),(7,'59,90','Camisa Regata Branca','Regata branca com design simples e moderno. Feita em tecido leve e respirável, garante conforto e liberdade de movimento. Possui corte ajustado ao corpo e acabamento limpo, ideal para compor looks casuais ou esportivos. Versátil e atemporal, é uma peça essencial para dias quentes e para quem busca estilo com praticidade.','https://i.ibb.co/Hs6GVMf/regata-based-branca.png'),(8,'59,90','Camisa Regata Preta','Regata preta com design simples e moderno. Feita em tecido leve e respirável, garante conforto e liberdade de movimento. Possui corte ajustado ao corpo e acabamento limpo, ideal para compor looks casuais ou esportivos. Versátil e atemporal, é uma peça essencial para dias quentes e para quem busca estilo com praticidade.','https://i.ibb.co/237Frw71/regata-based-preta.png'),(9,'59,90','Short Preto','Short preto com design clean e versátil. Confeccionado em tecido leve e resistente, oferece conforto e liberdade de movimento. Possui cós ajustável e bolsos funcionais, unindo praticidade e estilo. Ideal para o dia a dia ou momentos de lazer, é uma peça essencial que combina facilmente com qualquer look casual.','https://i.ibb.co/DgfwSGzt/short-based-preto.png'),(10,'199,90','Sapato de Couro','Tênis preto com design moderno e minimalista. Confeccionado em material resistente e respirável, garante conforto e durabilidade no uso diário. Possui solado antiderrapante e palmilha macia, oferecendo estabilidade e bem-estar a cada passo. Versátil e estiloso, combina com qualquer ocasião, do casual ao urbano, mantendo sempre um visual clean e sofisticado.','https://i.ibb.co/zVtDKRMp/tenis-based-preto.png');
+INSERT INTO `produtos` VALUES (1,'80,00','Boné Based','Boné simples e estiloso, perfeito para quem gosta de um visual moderno sem exageros. Feito com material de alta qualidade, tem toque macio, aba curvada e formato estruturado que se adapta bem à cabeça. O design minimalista, com poucos detalhes e cores neutras, traz um ar sofisticado e versátil — ideal para usar no dia a dia, em passeios ou compor um look urbano com personalidade.','https://i.ibb.co/27qwB7XH/bone-based-bege.png',10),(2,'90,00','Camisa Básica Branca','Camisa básica branca com design minimalista e toque sofisticado. Produzida em algodão de alta qualidade, oferece conforto e caimento perfeito ao corpo. O logo da marca em preto no peito adiciona contraste sutil e identidade ao visual. Ideal para quem busca uma peça versátil, estilosa e fácil de combinar em qualquer ocasião, do casual ao moderno.','https://i.ibb.co/LfD8MZG/camisa-based-frente.png',10),(3,'90,00','Camisa Básica Preta','Camisa básica preta com design clean e moderno. Confeccionada em algodão macio de alta qualidade, oferece conforto, durabilidade e ótimo caimento. O logo da marca em branco no peito traz um contraste elegante e discreto, destacando o estilo minimalista da peça. Versátil e atemporal, combina facilmente com diferentes looks, ideal para quem valoriza simplicidade com personalidade.','https://i.ibb.co/VWr2Z2gV/camisa-based-preta.png',10),(4,'249,99','Camisa Social','Camisa social azul-escura com design elegante e sofisticado. Confeccionada em tecido leve e de alta qualidade, oferece conforto e caimento impecável. Possui acabamento refinado, botões discretos e corte que valoriza a silhueta. Ideal para ocasiões formais ou para compor um visual moderno e profissional, unindo estilo, sobriedade e classe em uma única peça.','https://i.ibb.co/pBLLyRhx/camisa-manga-longa-azul.png',10),(6,'149,90','Sweater','Sweater preto com design minimalista e elegante. Confeccionado em tecido macio e de alta qualidade, proporciona conforto térmico e excelente caimento. Possui acabamento refinado nas mangas e na barra, destacando um visual moderno e discreto. Ideal para dias frios, combina facilmente com diferentes estilos, trazendo sofisticação e praticidade ao look.','https://i.ibb.co/Vpj4xWWP/moletom-based-preto.png',10),(7,'59,90','Camisa Regata Branca','Regata branca com design simples e moderno. Feita em tecido leve e respirável, garante conforto e liberdade de movimento. Possui corte ajustado ao corpo e acabamento limpo, ideal para compor looks casuais ou esportivos. Versátil e atemporal, é uma peça essencial para dias quentes e para quem busca estilo com praticidade.','https://i.ibb.co/Hs6GVMf/regata-based-branca.png',10),(8,'59,90','Camisa Regata Preta','Regata preta com design simples e moderno. Feita em tecido leve e respirável, garante conforto e liberdade de movimento. Possui corte ajustado ao corpo e acabamento limpo, ideal para compor looks casuais ou esportivos. Versátil e atemporal, é uma peça essencial para dias quentes e para quem busca estilo com praticidade.','https://i.ibb.co/237Frw71/regata-based-preta.png',10),(9,'59,90','Short Preto','Short preto com design clean e versátil. Confeccionado em tecido leve e resistente, oferece conforto e liberdade de movimento. Possui cós ajustável e bolsos funcionais, unindo praticidade e estilo. Ideal para o dia a dia ou momentos de lazer, é uma peça essencial que combina facilmente com qualquer look casual.','https://i.ibb.co/DgfwSGzt/short-based-preto.png',10),(10,'199,90','Sapato de Couro','Tênis preto com design moderno e minimalista. Confeccionado em material resistente e respirável, garante conforto e durabilidade no uso diário. Possui solado antiderrapante e palmilha macia, oferecendo estabilidade e bem-estar a cada passo. Versátil e estiloso, combina com qualquer ocasião, do casual ao urbano, mantendo sempre um visual clean e sofisticado.','https://i.ibb.co/zVtDKRMp/tenis-based-preto.png',10);
 /*!40000 ALTER TABLE `produtos` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -104,12 +80,12 @@ DROP TABLE IF EXISTS `users`;
 CREATE TABLE `users` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `Nome` varchar(45) NOT NULL,
-  `endereco` varchar(255) NOT NULL,
   `Email` varchar(105) NOT NULL,
   `Senha` varchar(45) NOT NULL,
-  `gastos` decimal(10,2) NOT NULL DEFAULT 0.00,
+  `Endereco` varchar(300) NOT NULL,
+  `gastos` decimal(10,2) DEFAULT 0.00,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -118,6 +94,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
+INSERT INTO `users` VALUES (1,'francisco','chico@teste.com','12345','rua teste',90.00);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -130,4 +107,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-11-28 19:28:33
+-- Dump completed on 2025-12-02 13:39:17
