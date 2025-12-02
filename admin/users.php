@@ -48,7 +48,7 @@ $sql = "SELECT * FROM users";
                                 <br>
                                 <h3>Gastos</h3>
                                 <span><?= $contatos['gastos'] ?></span>
-                                <!-- <h1 class="price"><span>R$</span> <?= $contatos['price'] ?> </h1> -->
+                                <br>
 
 
                                 <a style="width: 90%;" href="edit_mensagem.php?id=<?= $contatos['id'] ?>"><button

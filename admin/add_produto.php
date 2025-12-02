@@ -6,8 +6,9 @@ if (isset($_POST['salvar'])) {
     $desc = $_POST['desc'];
     $price = $_POST['price'];
     $image = $_POST['image']; 
+    $image = $_POST['estoque']; 
 
-    $sql = "INSERT INTO produtos (title, `desc`, price, image) VALUES ('$title', '$desc', '$price', '$image')";
+    $sql = "INSERT INTO produtos (title, `desc`, price, image, estoque) VALUES ('$title', '$desc', '$price', '$image', '$estoque')";
     
     if (mysqli_query($conn, $sql)) {
         echo "<script>alert('Produto adicionado com sucesso!'); window.location.href='index.php';</script>";
@@ -39,6 +40,9 @@ if (isset($_POST['salvar'])) {
 
             <label>Imagem (URL):</label><br>
             <input type="text" name="image" placeholder="ex: imagens/produto.jpg"><br><br>
+
+             <label>Estoque</label><br>
+            <input type="text" name="estoque" placeholder="ex: 10"><br><br>
 
             <button type="submit" name="salvar">Salvar Produto</button>
         </form>
