@@ -13,8 +13,10 @@ if (isset($_POST['atualizar'])) {
     $title = $_POST['title'];
     $desc = $_POST['desc'];
     $price = $_POST['price'];
+    $image = $_POST['image']; 
+    $estoque = $_POST['estoque'];
 
-    $update = "UPDATE produtos SET title='$title', `desc`='$desc', price='$price' WHERE id=$id";
+    $update = "UPDATE produtos SET title='$title', `desc`='$desc', price='$price', image='$image', estoque='$estoque' WHERE id=$id";
     if (mysqli_query($conn, $update)) {
         echo "<script>alert('Produto atualizado com sucesso!'); window.location.href='index.php';</script>";
     } else {
@@ -43,6 +45,12 @@ if (isset($_POST['atualizar'])) {
 
             <label>Preço:</label><br>
             <input type="text" name="price" value="<?= $produto['price'] ?>"><br><br>
+
+            <label>Imagem (URL):</label><br>
+            <input type="text" name="image" value="<?= $produto['image'] ?>"><br><br> 
+
+            <label>Estoque</label><br>
+            <input type="text" name="estoque" value="<?= $produto['estoque'] ?>"><br><br>
 
             <button type="submit" name="atualizar">Salvar Alterações</button>
         </form>
