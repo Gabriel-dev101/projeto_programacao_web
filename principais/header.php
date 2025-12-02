@@ -68,4 +68,4 @@
             <?php endif; ?>
         </div>
 
-           <script src="../script.js"></script>
+           <script src="/projeto_programacao_web/script.js"></script>
