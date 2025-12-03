@@ -1,6 +1,12 @@
 <?php
 include '../conexao/connect.php';
 session_start();
+
+// ------ VERIFICAÇÃO DE SESSÃO DE ADMINISTRADOR ------
+if (!isset($_SESSION['admin_id'])) {
+    header("Location: login_admin.php"); // redirecione para o login do admin
+    exit();
+}
 ?>
 
 <!DOCTYPE html>
@@ -12,26 +18,20 @@ session_start();
 
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
    <link rel="stylesheet" href="../admin.css?v=1.2">
-    <link rel="stylesheet" href="../style.css?v=1.2">
+   <link rel="stylesheet" href="../style.css?v=1.2">
 </head>
 <body>
-
-<!-- <?php include '../principais/header.php'; ?> -->
 
 <section class="dashboard">
 
    <h1 class="heading">Painel Administrativo</h1>
-         <header>
-           
-                <ul>
-              <li><a href="../index.php">Voltar</a></li>
 
-
-
-                </ul>
-
-               
-            </header> 
+   <header>
+        <ul>
+            <li><a href="../index.php">Voltar</a></li>
+            <li><a href="logout.php" class="logout-btn">Sair</a></li>
+        </ul>
+   </header> 
 
    <div class="box-container">
 
