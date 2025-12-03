@@ -65,7 +65,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       <!-- FORMULÁRIO -->
       <form class="contactForm" action="" method="POST">
         <h2>Envie sua mensagem</h2>
-        
+
         <label for="nome">Nome:</label>
         <input type="text" id="nome" name="nome" required>
 
@@ -79,9 +79,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
 
         <button type="submit">Enviar</button>
-      </form>
+      </form>  
 
-    </div>
+    </div>  
   </div>
  </div>
 </body>
