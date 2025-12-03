@@ -41,10 +41,10 @@ if ($acao === 'add' && $produto_id > 0) {
                 'preco' => (float)$produto['price'],
                 'quantidade' => $atual + 1
             ];
-            $mensagem = "Produto adicionado ao carrinho.";
+            $mensagem = "Produto inserido no carrinho.";
         }
     } else {
-        $erro = "Produto não encontrado.";
+        $erro = "Item não encontrado.";
     }
 }
 
@@ -60,7 +60,7 @@ if ($acao === 'update' && $produto_id > 0 && isset($_POST['delta'])) {
                 unset($_SESSION['cart'][$produto_id]);
             } else {
                 if ($novaQtd > $estoque) {
-                    $erro = "Quantidade solicitada excede o estoque disponível.";
+                    $erro = "A quantidade pedida ultrapassa o estoque disponível.";
                 } else {
                     $_SESSION['cart'][$produto_id]['quantidade'] = $novaQtd;
                 }
@@ -78,18 +78,18 @@ if ($acao === 'remove' && $produto_id > 0) {
 if ($acao === 'finalizar' && !empty($_SESSION['cart'])) {
     $pagamento = isset($_POST['pagamento']) ? $_POST['pagamento'] : '';
     if ($pagamento === '') {
-        $erro = "Selecione uma forma de pagamento.";
+        $erro = "Escolha uma forma de pagamento.";
     } else {
         foreach ($_SESSION['cart'] as $item) {
             $produto = carregarProduto($conn, $item['id']);
             if (!$produto) {
-                $erro = "Um dos produtos do carrinho não foi encontrado.";
+                $erro = "Um dos itens do carrinho não pôde ser localizado.";
                 break;
             }
             $estoque = (int)$produto['estoque'];
             $qtd = (int)$item['quantidade'];
             if ($qtd > $estoque) {
-                $erro = "Estoque insuficiente para o produto " . $produto['title'] . ".";
+                $erro = "Não há estoque suficiente deste produto." . $produto['title'] . ".";
                 break;
             }
         }
